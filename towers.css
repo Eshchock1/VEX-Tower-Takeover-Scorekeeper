@@ -1,0 +1,98 @@
+.changeValueButton {
+    border:2px solid black;
+    width:40px;
+    height:40px;
+    font-size:20px;
+    font-weight:bold;
+    margin:5px;
+
+}
+.greenButton {
+background-color:mediumseagreen;
+}
+.redButton {
+background-color:tomato;
+}
+#place, #remove {
+position:fixed;
+font-size:60px;
+right:100px;
+}
+
+#score {
+position:fixed;
+font-size:100px;
+right:200px;
+top:250px;
+}
+#place {
+top:100px;
+}
+#remove {
+top:175px;
+}
+@media only screen and (max-width:1000px) {
+    table{
+        width:100%;
+    }
+    td{
+        width:100%;
+    }
+    h2{
+    font-size:50px;
+    }
+    .col1 {
+        width:200px;
+    }
+    input {
+        width:150px;
+        height:60px;
+        font-size:50px;
+    }
+    #orange {
+        color:orangered;
+    }
+    #green {
+        color:mediumseagreen;
+    }
+    #purple {
+        color:purple;
+    }
+    .orange {
+        color:orangered;
+    }
+    .green {
+        color:mediumseagreen;
+    }
+    .purple {
+        color:purple;
+    }
+    .changeValueButton {
+        border:4px solid black;
+        width:70px;
+        height:70px;
+        font-size:40px;
+        font-weight:bold;
+        margin:5px;
+    
+    }
+    #place {
+        top:1350px;
+        width:100%;
+        text-align: center;
+        /* margin-left:50%;
+        transform: translateX(-50%); */
+    }
+    #remove {
+        top:1425px;
+        width:100%;
+        text-align: center;
+        /* margin-left:50%;
+        transform: translateX(-50%); */
+    }
+    #score {
+        top:1500;
+        width:100%;
+        text-align: center;
+    }
+    }

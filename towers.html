@@ -1,0 +1,226 @@
+<html>
+<head><title>Towers</title>
+    <link rel="stylesheet" href="towers.css"/>
+
+<style>
+
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+
+</head>
+<body>
+    <form>
+        <table cellspacing = "50px" style="position:absolute;top:-25px;">
+            <tr>
+                <td class="col1">
+<h2 class="title" style="color:red;">RED</h2>
+                </td>
+                <td>
+                    <label id="orange">orange cube</label><br>
+                    <input class="orange" value="0" type="text" id="redOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('redOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('redOrange')">-</button><br>
+                    <label id="green">green cube</label><br>        
+                    <input class="green"value="0" type="text" id="redGreen"><button type="button"  class="changeValueButton greenButton" onclick="add('redGreen')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('redGreen')">-</button><br>
+                    <label id="purple">purple cube</label><br>
+                    <input class="purple" value="0" type="text" id="redPurple"><button type="button"  class="changeValueButton greenButton" onclick="add('redPurple')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('redPurple')">-</button><br>
+                </td>
+            </tr>
+            <tr>
+                <td class="col1">                            <h2 style="color:blue;">BLUE</h2>
+                </td>
+                    <td>
+                            <label id="orange">orange cube</label><br>
+                            <input class="orange" value="0" type="text" id="blueOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('blueOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('blueOrange')">-</button><br>
+                            <label id="green">green cube</label><br>
+                            <input class="green"value="0" type="text" id="blueGreen"><button type="button"  class="changeValueButton greenButton" onclick="add('blueGreen')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('blueGreen')">-</button><br>
+                            <label id="purple">purple cube</label><br>
+                            <input class="purple" value="0" type="text" id="bluePurple"><button type="button"  class="changeValueButton greenButton" onclick="add('bluePurple')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('bluePurple')">-</button><br>
+                    </td>
+                </tr>
+            <tr>
+                <td class="col1">
+                        <h2>TOWERS</h2>
+                </td>
+                <td>
+                    <label id="orange">orange tower</label><br>
+                    <input class="orange" value="0" type="text" id="towerOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('towerOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('towerOrange')">-</button><br>
+                    <label id="green">green tower</label><br>
+                    <input class="green"value="0" type="text" id="towerGreen"><button type="button"  class="changeValueButton greenButton" onclick="add('towerGreen')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('towerGreen')">-</button><br>
+                    <label id="purple">purple tower</label><br>
+                    <input class="purple" value="0" type="text" id="towerPurple"><button type="button"  class="changeValueButton greenButton" onclick="add('towerPurple')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('towerPurple')">-</button><br></td>
+            </tr>
+            
+                <tr>
+                    <td class="col1"><h2>PROTECTED TOWER</h2></td>
+                <td>
+                    <label id="orange">orange tower</label><br>
+                    <input class="orange" value="0" type="text" id="protectedTowerOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('protectedTowerOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('protectedTowerOrange')">-</button><br>
+                    <label id="green">green tower</label><br>
+                    <input class="green"value="0" type="text" id="protectedTowerGreen"><button type="button"  class="changeValueButton greenButton" onclick="add('protectedTowerGreen')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('protectedTowerGreen')">-</button><br>
+                    <label id="purple">purple tower</label><br>
+                    <input class="purple" value="0" type="text" id="protectedTowerPurple"><button type="button"  class="changeValueButton greenButton" onclick="add('protectedTowerPurple')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('protectedTowerPurple')">-</button></td>
+            </tr>
+        </table>
+        
+        
+        
+ 
+   </form>
+          
+   <div id="place">
+        <p></p>
+    </div>
+    <div id="remove">
+            <p></p>
+        </div>
+    <div id="score"></div>
+   <script>
+       var team = prompt("Enter team (r / b):");
+
+   </script>
+   <script>
+
+window.setInterval(function() {
+   var redOrange = parseInt(document.getElementById('redOrange').value);
+   var redGreen = parseInt(document.getElementById('redGreen').value);
+   var redPurple = parseInt(document.getElementById('redPurple').value);
+   var blueOrange = parseInt(document.getElementById('blueOrange').value);
+   var blueGreen = parseInt(document.getElementById('blueGreen').value);
+   var bluePurple = parseInt(document.getElementById('bluePurple').value);
+   var towerOrange = parseInt(document.getElementById('towerOrange').value);
+   var towerGreen = parseInt(document.getElementById('towerGreen').value);
+   var towerPurple = parseInt(document.getElementById('towerPurple').value);
+   var protectedTowerOrange = parseInt(document.getElementById('protectedTowerOrange').value);
+   var protectedTowerGreen = parseInt(document.getElementById('protectedTowerGreen').value);
+   var protectedTowerPurple = parseInt(document.getElementById('protectedTowerPurple').value);
+    
+    var tempRedOrange = redOrange * (towerOrange + protectedTowerOrange + 1);
+    var tempRedGreen = redGreen * (towerGreen + protectedTowerGreen + 1);
+    var tempRedPurple = redPurple * (towerPurple + protectedTowerPurple + 1);
+    var tempBlueOrange = blueOrange * (towerOrange + protectedTowerOrange + 1);
+    var tempBlueGreen = blueGreen * (towerGreen + protectedTowerGreen + 1);
+    var tempBluePurple = bluePurple * (towerPurple + protectedTowerPurple + 1);
+
+    var redTotal = tempRedOrange + tempRedGreen + tempRedPurple;
+    var blueTotal = tempBlueOrange + tempBlueGreen + tempBluePurple;
+    document.getElementById("score").innerHTML = "<p><span style='color:red'>" + redTotal + "</span> - <span style='color:blue;'>" + blueTotal + "</span></p>";
+    var dif = 0;
+    var tempTotal = [0, 0, 0];
+    if (team == "r"){
+        dif = redTotal - blueTotal;
+        tempTotal[0] = (redOrange * (towerOrange + protectedTowerOrange + 2) + tempRedGreen + tempRedPurple) - (blueOrange * (towerOrange + protectedTowerOrange + 2) + tempBlueGreen + tempBluePurple);
+        tempTotal[1] = (tempRedOrange + (redGreen * (towerGreen + protectedTowerGreen + 2)) + tempRedPurple) - (tempBlueOrange + (blueGreen * (towerGreen + protectedTowerGreen + 2)) + tempBluePurple);
+        tempTotal[2] = (tempRedOrange + tempRedGreen + (redPurple * (towerPurple + protectedTowerPurple + 2))) - (tempBlueOrange + tempBlueGreen + (bluePurple * (towerPurple + protectedTowerPurple + 2)));
+        if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
+            document.getElementById("place").innerHTML = "<p style='color:orange;font-weight:bold;'>PLACE ORANGE</p>";
+        }
+        else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){
+            document.getElementById("place").innerHTML = "<p style='color:green;font-weight:bold;'>PLACE GREEN</p>";
+        }
+        else if (tempTotal[2] >= tempTotal[0] && tempTotal[2] >= tempTotal[1] && tempTotal[2] > dif){
+            document.getElementById("place").innerHTML = "<p style='color:purple;font-weight:bold;'>PLACE PURPLE</p>";
+    }
+        else {
+            document.getElementById("place").innerHTML = "<p style='color:black;font-weight:bold;'>DONT PLACE</p>";
+
+        }
+    //for removal
+    if (towerOrange > 0){
+        tempTotal[0] = (redOrange * (towerOrange + protectedTowerOrange) + tempRedGreen + tempRedPurple) - (blueOrange * (towerOrange + protectedTowerOrange) + tempBlueGreen + tempBluePurple);
+    }
+        else{
+            tempTotal[0] = dif - 1;
+        }
+        if (towerGreen > 0){
+        tempTotal[1] = (tempRedOrange + (redGreen * (towerGreen + protectedTowerGreen)) + tempRedPurple) - (tempBlueOrange + (blueGreen * (towerGreen + protectedTowerGreen)) + tempBluePurple);
+        }
+        else{
+            tempTotal[1] = dif - 1;
+        }
+        if (towerPurple > 0){
+        tempTotal[2] = (tempRedOrange + tempRedGreen + (redPurple * (towerPurple + protectedTowerPurple))) - (tempBlueOrange + tempBlueGreen + (bluePurple * (towerPurple + protectedTowerPurple)));    
+    }
+        else{
+            tempTotal[2] = dif - 1;
+        }
+
+        if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
+            document.getElementById("remove").innerHTML = "<p style='color:orange;font-weight:bold;'>REMOVE ORANGE</p>";
+}
+        else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){ 
+            document.getElementById("remove").innerHTML = "<p style='color:green;font-weight:bold;'>REMOVE GREEN</p>";
+}
+        else if (tempTotal[2] >= tempTotal[0] && tempTotal[2] >= tempTotal[1] && tempTotal[2] > dif){
+            document.getElementById("remove").innerHTML = "<p style='color:purple;font-weight:bold;'>REMOVE PURPLE</p>";
+ }
+ else {
+        document.getElementById("remove").innerHTML = "<p style='color:black;font-weight:bold;'>DONT REMOVE</p>";
+    }
+ }
+ else if (team == "b"){
+        dif = blueTotal - redTotal;
+        tempTotal[0] = (blueOrange * (towerOrange + protectedTowerOrange + 2) + tempBlueGreen + tempBluePurple) - (redOrange * (towerOrange + protectedTowerOrange + 2) + tempRedGreen + tempRedPurple);
+        tempTotal[1] = (tempBlueOrange + (blueGreen * (towerGreen + protectedTowerGreen + 2)) + tempBluePurple) - (tempRedOrange + (redGreen * (towerGreen + protectedTowerGreen + 2)) + tempRedPurple);
+        tempTotal[2] = (tempBlueOrange + tempBlueGreen + (bluePurple * (towerPurple + protectedTowerPurple + 2))) - (tempRedOrange + tempRedGreen + (redPurple * (towerPurple + protectedTowerPurple + 2)));
+        if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
+            document.getElementById("place").innerHTML = "<p style='color:orange;font-weight:bold;'>PLACE ORANGE</p>";
+        }
+        else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){
+            document.getElementById("place").innerHTML = "<p style='color:green;font-weight:bold;'>PLACE GREEN</p>";
+        }
+        else if (tempTotal[2] >= tempTotal[0] && tempTotal[2] >= tempTotal[1] && tempTotal[2] > dif){
+            document.getElementById("place").innerHTML = "<p style='color:purple;font-weight:bold;'>PLACE PURPLE</p>";
+    }
+    else {
+            document.getElementById("place").innerHTML = "<p style='color:black;font-weight:bold;'>DONT PLACE</p>";
+
+        }
+    //for removal
+    if (towerOrange > 0){
+        tempTotal[0] = (blueOrange * (towerOrange + protectedTowerOrange) + tempBlueGreen + tempBluePurple) - (redOrange * (towerOrange + protectedTowerOrange) + tempRedGreen + tempRedPurple) ;
+    }
+        else{
+            tempTotal[0] = dif - 1;
+        }
+        if (towerGreen > 0){
+        tempTotal[1] = (tempBlueOrange + (blueGreen * (towerGreen + protectedTowerGreen)) + tempBluePurple) - (tempRedOrange + (redGreen * (towerGreen + protectedTowerGreen)) + tempRedPurple);
+        }
+        else{
+            tempTotal[1] = dif - 1;
+        }
+        if (towerPurple > 0){
+        tempTotal[2] = (tempBlueOrange + tempBlueGreen + (bluePurple * (towerPurple + protectedTowerPurple))) - (tempRedOrange + tempRedGreen + (redPurple * (towerPurple + protectedTowerPurple)));    
+    }
+        else{
+            tempTotal[2] = dif - 1;
+        }
+        if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
+            document.getElementById("remove").innerHTML = "<p style='color:orange;font-weight:bold;'>REMOVE ORANGE</p>";
+}
+        else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){ 
+            document.getElementById("remove").innerHTML = "<p style='color:green;font-weight:bold;'>REMOVE GREEN</p>";
+}
+        else if (tempTotal[2] >= tempTotal[0] && tempTotal[2] >= tempTotal[1] && tempTotal[2] > dif){
+            document.getElementById("remove").innerHTML = "<p style='color:purple;font-weight:bold;'>REMOVE PURPLE</p>";
+ }
+    else {
+        document.getElementById("remove").innerHTML = "<p style='color:black;font-weight:bold;'>DONT REMOVE</p>";
+    }
+ }
+}, 100);
+
+
+function add(id){
+    document.getElementById(id).value = parseInt(document.getElementById(id).value) + 1;
+}
+function subtract(id){
+    if (document.getElementById(id).value > 0) {
+
+    document.getElementById(id).value = parseInt(document.getElementById(id).value) - 1;
+}
+}
+    
+
+   </script>
+</body>
+</html>
