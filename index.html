@@ -11,12 +11,11 @@
 </head>
 <body>
     <form>
-        <table cellspacing = "50px" style="position:absolute;top:-25px;">
+        <table cellspacing = "10px" style="position:absolute;">
             <tr>
-                <td class="col1">
-<h2 class="title" style="color:red;">RED</h2>
-                </td>
                 <td>
+                        <h2 class="title" style="color:red;">RED</h2>
+
                     <label id="orange">orange cube</label><br>
                     <input class="orange" value="0" type="text" id="redOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('redOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('redOrange')">-</button><br>
                     <label id="green">green cube</label><br>        
@@ -24,11 +23,9 @@
                     <label id="purple">purple cube</label><br>
                     <input class="purple" value="0" type="text" id="redPurple"><button type="button"  class="changeValueButton greenButton" onclick="add('redPurple')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('redPurple')">-</button><br>
                 </td>
-            </tr>
-            <tr>
-                <td class="col1">                            <h2 style="color:blue;">BLUE</h2>
-                </td>
                     <td>
+                            <h2 style="color:blue;">BLUE</h2>
+
                             <label id="orange">orange cube</label><br>
                             <input class="orange" value="0" type="text" id="blueOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('blueOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('blueOrange')">-</button><br>
                             <label id="green">green cube</label><br>
@@ -38,21 +35,19 @@
                     </td>
                 </tr>
             <tr>
-                <td class="col1">
-                        <h2>TOWERS</h2>
-                </td>
+             
                 <td>
+                        <h2>TOWERS</h2>
+
                     <label id="orange">orange tower</label><br>
                     <input class="orange" value="0" type="text" id="towerOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('towerOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('towerOrange')">-</button><br>
                     <label id="green">green tower</label><br>
                     <input class="green"value="0" type="text" id="towerGreen"><button type="button"  class="changeValueButton greenButton" onclick="add('towerGreen')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('towerGreen')">-</button><br>
                     <label id="purple">purple tower</label><br>
                     <input class="purple" value="0" type="text" id="towerPurple"><button type="button"  class="changeValueButton greenButton" onclick="add('towerPurple')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('towerPurple')">-</button><br></td>
-            </tr>
-            
-                <tr>
-                    <td class="col1"><h2>PROTECTED TOWER</h2></td>
+        
                 <td>
+                        <h2>PROTECTED TOWER</h2>
                     <label id="orange">orange tower</label><br>
                     <input class="orange" value="0" type="text" id="protectedTowerOrange"><button type="button"  class="changeValueButton greenButton" onclick="add('protectedTowerOrange')">+</button><button type="button"  class="changeValueButton redButton" onclick="subtract('protectedTowerOrange')">-</button><br>
                     <label id="green">green tower</label><br>
@@ -112,7 +107,7 @@ window.setInterval(function() {
         tempTotal[1] = (tempRedOrange + (redGreen * (towerGreen + protectedTowerGreen + 2)) + tempRedPurple) - (tempBlueOrange + (blueGreen * (towerGreen + protectedTowerGreen + 2)) + tempBluePurple);
         tempTotal[2] = (tempRedOrange + tempRedGreen + (redPurple * (towerPurple + protectedTowerPurple + 2))) - (tempBlueOrange + tempBlueGreen + (bluePurple * (towerPurple + protectedTowerPurple + 2)));
         if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
-            document.getElementById("place").innerHTML = "<p style='color:orange;font-weight:bold;'>PLACE ORANGE</p>";
+            document.getElementById("place").innerHTML = "<p style='color:orangered;font-weight:bold;'>PLACE ORANGE</p>";
         }
         else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){
             document.getElementById("place").innerHTML = "<p style='color:green;font-weight:bold;'>PLACE GREEN</p>";
@@ -145,7 +140,7 @@ window.setInterval(function() {
         }
 
         if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
-            document.getElementById("remove").innerHTML = "<p style='color:orange;font-weight:bold;'>REMOVE ORANGE</p>";
+            document.getElementById("remove").innerHTML = "<p style='color:orangered;font-weight:bold;'>REMOVE ORANGE</p>";
 }
         else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){ 
             document.getElementById("remove").innerHTML = "<p style='color:green;font-weight:bold;'>REMOVE GREEN</p>";
@@ -163,7 +158,7 @@ window.setInterval(function() {
         tempTotal[1] = (tempBlueOrange + (blueGreen * (towerGreen + protectedTowerGreen + 2)) + tempBluePurple) - (tempRedOrange + (redGreen * (towerGreen + protectedTowerGreen + 2)) + tempRedPurple);
         tempTotal[2] = (tempBlueOrange + tempBlueGreen + (bluePurple * (towerPurple + protectedTowerPurple + 2))) - (tempRedOrange + tempRedGreen + (redPurple * (towerPurple + protectedTowerPurple + 2)));
         if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
-            document.getElementById("place").innerHTML = "<p style='color:orange;font-weight:bold;'>PLACE ORANGE</p>";
+            document.getElementById("place").innerHTML = "<p style='color:orangered;font-weight:bold;'>PLACE ORANGE</p>";
         }
         else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){
             document.getElementById("place").innerHTML = "<p style='color:green;font-weight:bold;'>PLACE GREEN</p>";
@@ -195,7 +190,7 @@ window.setInterval(function() {
             tempTotal[2] = dif - 1;
         }
         if (tempTotal[0] >= tempTotal[1] && tempTotal[0] >= tempTotal[2] && tempTotal[0] > dif){
-            document.getElementById("remove").innerHTML = "<p style='color:orange;font-weight:bold;'>REMOVE ORANGE</p>";
+            document.getElementById("remove").innerHTML = "<p style='color:orangered;font-weight:bold;'>REMOVE ORANGE</p>";
 }
         else if (tempTotal[1] >= tempTotal[0] && tempTotal[1] >= tempTotal[2] && tempTotal[1] > dif){ 
             document.getElementById("remove").innerHTML = "<p style='color:green;font-weight:bold;'>REMOVE GREEN</p>";
