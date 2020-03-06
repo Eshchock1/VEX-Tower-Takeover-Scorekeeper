@@ -1,0 +1,209 @@
+body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+
+}
+#main-menu {
+    width:100%;
+    height:100%;
+    background-color:white;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+    position:fixed;
+    z-index:10;
+    padding-left:50px;
+    overflow-y: hidden;
+    transition:1s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#main-menu h1 {
+    font-size:60px;
+    color:rgb(87, 87, 87);
+}
+#main-menu h2 {
+    font-size:40px;
+    color:rgb(59, 59, 59);
+}
+#main-menu button {
+    border-radius:5px;
+    padding:10px;
+    color:20px;
+    width:100px;
+    background-color:white;
+    transition:0.1s ease-in-out;
+    font-weight:bold;
+}
+.red {
+    color:tomato;
+    border:2px solid tomato;
+    margin-right:10px;
+}
+.blue {
+    color:dodgerblue;
+    border:2px solid dodgerblue;
+}
+.red:hover {
+    color:white;
+    background:tomato !important;
+}
+.blue:hover {
+    color:white;
+    background:dodgerblue !important;
+}
+
+#main-program {
+width:100%;
+height:100%;
+background-color: white;
+}
+.main-table {
+    width:100%;
+    padding:20px 50px 0 50px;
+}
+
+.main-table td {
+    width:33%;
+}
+
+.main-table .card {
+    box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.25);
+    border-radius:10px;
+    display:inline-block;
+}
+
+#main-program h1 {
+    font-size:70px;
+    font-family: 'Roboto', sans-serif;
+}
+.red-title {
+    color:tomato;
+}
+.blue-title {
+    color:dodgerblue;
+}
+#main-program div {
+    position:relative;
+}
+
+#main-program img {
+    width:175px;
+    height:175px;
+    position:relative;
+    top:-20px;
+}
+#main-program p {
+    font-size:65px;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight:bold;
+    top:-20%;
+    color:white;
+    left:50%;
+    transform: translateX(-50%);
+    position:absolute;
+    padding:0;
+}
+.red-strip {
+    width:100%;
+    height:40px;
+    position:realtive;
+    background:tomato;
+    border-radius: 5px 5px 0 0;
+}
+.blue-strip {
+    width:100%;
+    height:40px;
+    position:realtive;
+    background-color:dodgerblue;
+    border-radius: 5px 5px 0 0;
+}
+.gray-strip {
+    width:100%;
+    height:40px;
+    position:realtive;
+    background-color:gray;
+    border-radius: 5px 5px 0 0;
+}
+.strip-text{
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    color:white;
+    font-size:20px;
+    padding:10px;
+}
+
+.score h1{
+    font-size:100px !important;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight:bold;
+    line-height: 1em;
+    margin:0;
+}
+.score h2{
+    font-size:80px !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    margin:0;
+    color:gray;
+}
+.score #blue-score {
+    color:dodgerblue;
+}
+.score #red-score {
+    color:tomato;
+}
+
+.score button {
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    margin-top:20px;
+    border-radius:5px;
+    padding:10px;
+    color:20px;
+    width:200px;
+    background-color:white;
+    transition:0.1s ease-in-out;
+    color:gray;
+    border:2px solid gray;
+}
+
+.score button:hover {
+    background-color:gray;
+    color:white;
+}
+
+.place-remove .card {
+    margin:10px;
+}
+.place-remove .gray-strip {
+    margin-bottom:30px;
+}
+
+.time h3 {
+    font-size:120px !important;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight:bold;
+    margin:0;
+    color:gray;
+    letter-spacing: 0.1em;
+}
+
+.time button {
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    margin-top:20px;
+    border-radius:5px;
+    padding:10px;
+    color:20px;
+    width:200px;
+    background-color:white;
+    transition:0.1s ease-in-out;
+    color:gray;
+    border:2px solid gray;
+}
+
+.time button:hover {
+    background-color:gray;
+    color:white;
+}
