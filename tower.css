@@ -2,7 +2,6 @@ body {
     margin:0;
     padding:0;
     overflow-x:hidden;
-
 }
 #main-menu {
     width:100%;
@@ -214,7 +213,6 @@ background-color: white;
     margin-top:20px;
     border-radius:5px;
     padding:10px;
-    color:20px;
     width:150px;
     background-color:white;
     transition:0.1s ease-in-out;
@@ -226,5 +224,30 @@ background-color: white;
 
 .remove:hover {
     background-color:gray;
+    color:white;
+}
+
+#auto-winner-red {
+    width:100px;
+    border:2px solid tomato;
+    color:tomato;
+    overflow: hidden;
+    margin-left:30px;
+}
+
+#auto-winner-blue {
+    width:100px;
+    border:2px solid dodgerblue;
+    color:dodgerblue;
+    overflow: hidden;
+    margin-left:30px;
+}
+
+#auto-winner-blue:hover {
+    background:dodgerblue;
+    color:white;
+}
+#auto-winner-red:hover {
+    background:tomato;
     color:white;
 }

@@ -25,6 +25,9 @@
         var place = "";
         var remove = "";
         var timer;
+        var autoPointsBlue = 0;
+        var autoPointsRed = 0;
+        var timerRunning = false;
         function startProgram(color) {
             if (color == "red"){
                 userAlliance = "r";
@@ -54,7 +57,15 @@
             diffPurple = 0;
             place = "";
             remove = "";
-            setTimeout(update, 1000);
+            autoPointsBlue = 0;
+            autoPointsRed = 0;
+            timerRunning = false;
+            setTimeout(function() {
+                update();
+                document.getElementById("auto-winner-red").style.display = "inline-block";
+                document.getElementById("auto-winner-blue").style.display = "inline-block";
+                resetTimer();
+            }, 1000);
         }
 
         function reset() {
@@ -76,6 +87,12 @@
             diffPurple = 0;
             place = "";
             remove = "";
+            autoPointsBlue = 0;
+            autoPointsRed = 0;
+            timerRunning = false;
+            document.getElementById("auto-winner-red").style.display = "inline-block";
+            document.getElementById("auto-winner-blue").style.display = "inline-block";
+            resetTimer();
             update();
         }
         function increase(variable) {
@@ -106,8 +123,8 @@
             else if (variable == "TP") {
                 purpleTower += 1;
             } 
-            redScore = (redOrange * (orangeTower+1)) + (redGreen * (greenTower+1)) + (redPurple * (purpleTower+1));
-            blueScore = (blueOrange * (orangeTower+1)) + (blueGreen * (greenTower+1)) + (bluePurple * (purpleTower+1));
+            redScore = (redOrange * (orangeTower+1)) + (redGreen * (greenTower+1)) + (redPurple * (purpleTower+1)) + autoPointsRed;
+            blueScore = (blueOrange * (orangeTower+1)) + (blueGreen * (greenTower+1)) + (bluePurple * (purpleTower+1)) + autoPointsBlue;
             
             if (userAlliance == "r") {
                 diffOrange = redOrange - blueOrange;                 
@@ -275,11 +292,15 @@
             }
         }
         function startTimer(){
+            if (!timerRunning){
             timer = setInterval(displayTime, 1000);
+            timerRunning = true;
+            }
         }
 
         function resetTimer(){
             clearInterval(timer);
+            timerRunning = false;
             seconds = 60;
             mins = 1;
             document.getElementById("timer").innerHTML = "2:00";
@@ -306,7 +327,16 @@ seconds--;
   }
 }
 
-
+function autoWinner(winner) {
+    if (winner == "r") {
+        autoPointsRed = 6;
+    }
+    else {
+        autoPointsBlue = 6;
+    }
+    document.getElementById("auto-winner-red").style.display = "none";
+    document.getElementById("auto-winner-blue").style.display = "none";
+}
     </script>
 <body>
     <div id="main-menu">
@@ -332,9 +362,9 @@ seconds--;
                 </div>
                 </td>
                 <td align="center">
-                    <div class="score"><h1 id="red-score">0</h1><h1 id="blue-score">0</h1>
-                        <button onclick="reset()">RESET</button><br><button onclick="returnToMainMenu()">MAIN MENU</button></div>
-                        <button onclick="autoWinner('r')">RED +6</button><button onclick="autoWinner('b')">BLUE +6</button></div>
+                    <div class="score"><h1 id="red-score">0<button onclick="autoWinner('r')" id="auto-winner-red">RED +6</button></h1><h1 id="blue-score">0<button onclick="autoWinner('b')" id="auto-winner-blue">BLUE +6</button></h1>
+                        <button onclick="reset()">RESET</button><br><button onclick="returnToMainMenu()">MAIN MENU</button>
+                    </div>
                     </td>
                 <td align="right">
                     <div class="card">
