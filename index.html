@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="tower.css"/>
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Roboto&display=swap" rel="stylesheet">
+        <title>VEX Tower Takeover Score Tracker</title>
     </head>
     <script>
         var userAlliance;
@@ -155,6 +156,85 @@
             update();
         }
 
+        function decrease(variable) {
+            if (variable == "RO" && redOrange > 0) {
+                redOrange -= 1;
+            } 
+            else if (variable == "RG" && redGreen > 0) {
+                redGreen -= 1;
+            } 
+            else if (variable == "RP" && redPurple > 0) {
+                redPurple -= 1;
+            } 
+            else if (variable == "BO" && blueOrange > 0) {
+                blueOrange -= 1;
+            } 
+            else if (variable == "BG" && blueGreen > 0) {
+                blueGreen -= 1;
+            } 
+            else if (variable == "BP" && bluePurple > 0) {
+                bluePurple -= 1;
+            } 
+            else if (variable == "TO" && orangeTower > 0) {
+                orangeTower -= 1;
+            } 
+            else if (variable == "TG" && greenTower > 0) {
+                greenTower -= 1;
+            } 
+            else if (variable == "TP" && purpleTower > 0) {
+                purpleTower -= 1;
+            } 
+            redScore = (redOrange * (orangeTower+1)) + (redGreen * (greenTower+1)) + (redPurple * (purpleTower+1));
+            blueScore = (blueOrange * (orangeTower+1)) + (blueGreen * (greenTower+1)) + (bluePurple * (purpleTower+1));
+            
+            if (userAlliance == "r") {
+                diffOrange = redOrange - blueOrange;                 
+                diffGreen = redGreen - blueGreen;                 
+                diffPurple = redPurple - bluePurple;                 
+            }
+            else {
+                diffOrange = blueOrange - redOrange;                 
+                diffGreen = blueGreen - redGreen;                 
+                diffPurple = bluePurple - redPurple; 
+            }
+            if (diffOrange > 0 && diffOrange >= diffGreen && diffOrange >= diffPurple) {
+                place = "o";
+            }
+            else if (diffGreen > 0 && diffGreen >= diffOrange && diffGreen >= diffPurple) {
+                place = "g";
+            }
+            else if (diffPurple > 0 && diffPurple >= diffGreen && diffPurple >= diffOrange) {
+                place = "p";
+            }
+            else {
+                place="n";
+            }
+            
+            if (greenTower == 0) {
+                diffGreen = 1000;
+            }
+            if (orangeTower == 0) {
+                diffOrange = 1000;
+            }
+            if (purpleTower == 0) {
+                diffPurple = 1000;
+            }
+
+            if (orangeTower > 0 && diffOrange < 0 && diffOrange <= diffGreen && diffOrange <= diffPurple) {
+                remove = "o";
+            }
+            else if (greenTower > 0 && diffGreen < 0 && diffGreen <= diffOrange && diffGreen <= diffPurple) {
+                remove = "g";
+            }
+            else if (purpleTower > 0 && diffPurple < 0 && diffPurple <= diffGreen && diffPurple <= diffOrange) {
+                remove = "p";
+            }
+            else {
+                remove ="n";
+            }
+            update();
+        }
+
         function update() {
             document.getElementById("redOrange").innerHTML = redOrange;
             document.getElementById("redPurple").innerHTML = redPurple;
@@ -210,9 +290,9 @@
                     <div class="red-strip"><h2 class="strip-text">RED GOALZONE</h2></div>
                     <table>
                         <tr>
-                            <td><div onclick="increase('RO')"><img src="orangecube.jpg"><p id="redOrange">0</p></div></td>
-                            <td><br><br><br><div onclick="increase('RP')"><img src="purplecube.jpg"><p id="redPurple">0</p></div></td>
-                            <td><div onclick="increase('RG')"><img src="greencube.jpg"><p id="redGreen">0</p></div></td>
+                            <td align="center"><br><br><div onclick="increase('RO')"><img src="orangecube.jpg"><p id="redOrange">0</p></div><button class="remove" onclick="decrease('RO')">REMOVE</button></td>
+                            <td align="center"><br><br><div onclick="increase('RP')"><img src="purplecube.jpg"><p id="redPurple">0</p></div><button class="remove" onclick="decrease('RP')">REMOVE</button></td>
+                            <td align="center"><br><br><div onclick="increase('RG')"><img src="greencube.jpg"><p id="redGreen">0</p></div><button class="remove" onclick="decrease('RG')">REMOVE</button></td>
                         </tr>
                     </table>
                 </div>
@@ -226,9 +306,9 @@
                         <div class="blue-strip"><h2 class="strip-text">BLUE GOALZONE</h2></div>
                     <table>
                         <tr>
-                            <td><div onclick="increase('BO')"><img src="orangecube.jpg"><p id="blueOrange">0</p></div></td>
-                            <td><br><br><br><div onclick="increase('BP')"><img src="purplecube.jpg"><p id="bluePurple">0</p></div></td>
-                            <td><div onclick="increase('BG')"><img src="greencube.jpg"><p id="blueGreen">0</p></div></td>
+                            <td align="center"><br><br><div onclick="increase('BO')"><img src="orangecube.jpg"><p id="blueOrange">0</p></div><button class="remove" onclick="decrease('BO')">REMOVE</button></td>
+                            <td align="center"><br><br><div onclick="increase('BP')"><img src="purplecube.jpg"><p id="bluePurple">0</p></div><button class="remove" onclick="decrease('BP')">REMOVE</button></td>
+                            <td align="center"><br><br><div onclick="increase('BG')"><img src="greencube.jpg"><p id="blueGreen">0</p></div><button class="remove" onclick="decrease('BG')">REMOVE</button></td>
                         </tr>
                        
                     </table>
@@ -250,9 +330,9 @@
                         <div class="gray-strip"><h2 class="strip-text">TOWERS</h2></div>
                         <table>
                             <tr>
-                                <td><div onclick="increase('TO')"><img src="orangecube.jpg"><p id="orangeTowers">0</p></div></td>
-                                <td><br><br><br><div onclick="increase('TP')"><img src="purplecube.jpg"><p id="purpleTowers">0</p></div></td>
-                                <td><div onclick="increase('TG')"><img src="greencube.jpg"><p id="greenTowers">0</p></div></td>
+                                <td align="center"><br><br><div onclick="increase('TO')"><img src="orangecube.jpg"><p id="orangeTowers">0</p></div><button class="remove" onclick="decrease('TO')">REMOVE</button></td>
+                                <td align="center"><br><br><div onclick="increase('TP')"><img src="purplecube.jpg"><p id="purpleTowers">0</p></div><button class="remove" onclick="decrease('TP')">REMOVE</button></td>
+                                <td align="center"><br><br><div onclick="increase('TG')"><img src="greencube.jpg"><p id="greenTowers">0</p></div><button class="remove" onclick="decrease('TG')">REMOVE</button></td>
                             </tr>
                         </table>
                     </div>

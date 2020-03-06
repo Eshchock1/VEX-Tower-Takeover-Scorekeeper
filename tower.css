@@ -207,3 +207,24 @@ background-color: white;
     background-color:gray;
     color:white;
 }
+
+.remove {
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    margin-top:20px;
+    border-radius:5px;
+    padding:10px;
+    color:20px;
+    width:150px;
+    background-color:white;
+    transition:0.1s ease-in-out;
+    color:gray;
+    border:2px solid gray;
+    margin-top:-15px;
+    margin-bottom:5px;
+}
+
+.remove:hover {
+    background-color:gray;
+    color:white;
+}
