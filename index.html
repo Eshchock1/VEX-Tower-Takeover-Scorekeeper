@@ -17,13 +17,14 @@
         var purpleTower = 0;
         var redScore = 0;
         var blueScore = 0;
-        var mins = 2;
-        var seconds = 00;
+        var mins = 1;
+        var seconds = 60;
         var diffOrange = 0;
         var diffGreen = 0;
         var diffPurple = 0;
         var place = "";
         var remove = "";
+        var timer;
         function startProgram(color) {
             if (color == "red"){
                 userAlliance = "r";
@@ -53,7 +54,7 @@
             diffPurple = 0;
             place = "";
             remove = "";
-            setTimeout(function() {update()}, 1000);
+            setTimeout(update, 1000);
         }
 
         function reset() {
@@ -273,6 +274,39 @@
                 document.getElementById("remove").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='white.jpg'>";
             }
         }
+        function startTimer(){
+            timer = setInterval(displayTime, 1000);
+        }
+
+        function resetTimer(){
+            clearInterval(timer);
+            seconds = 60;
+            mins = 1;
+            document.getElementById("timer").innerHTML = "2:00";
+        }
+
+        function  displayTime(){
+  var tempZero = "";
+  if(seconds < 11) {
+    tempZero = "0";
+  }
+  else {
+    tempZero = "";
+  }
+seconds--;
+  document.getElementById("timer").innerHTML = mins + ":" + tempZero + seconds;
+
+  if (mins == 0 && sec==0) { 
+    resetTimer()
+
+  }
+  if (seconds == 00) {
+    mins--;
+    seconds = 59;
+  }
+}
+
+
     </script>
 <body>
     <div id="main-menu">
@@ -300,7 +334,8 @@
                 <td align="center">
                     <div class="score"><h1 id="red-score">0</h1><h1 id="blue-score">0</h1>
                         <button onclick="reset()">RESET</button><br><button onclick="returnToMainMenu()">MAIN MENU</button></div>
-                </td>
+                        <button onclick="autoWinner('r')">RED +6</button><button onclick="autoWinner('b')">BLUE +6</button></div>
+                    </td>
                 <td align="right">
                     <div class="card">
                         <div class="blue-strip"><h2 class="strip-text">BLUE GOALZONE</h2></div>
@@ -337,7 +372,7 @@
                         </table>
                     </div>
                 </td>
-                <td align="center" class="time"><h3>2:00</h3><button>START TIMER</button><br><button>RESET TIMER</button></td>
+                <td align="center" class="time"><h3 id="timer">2:00</h3><button onclick="startTimer()">START TIMER</button><br><button onclick="resetTimer()">RESET TIMER</button></td>
             </tr>
         </center>
         </table>
