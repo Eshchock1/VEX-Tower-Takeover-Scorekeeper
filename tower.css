@@ -132,7 +132,7 @@ background-color: white;
     padding:10px;
 }
 
-.score h1{
+.score span{
     font-size:100px !important;
     font-family: 'Fjalla One', sans-serif;
     font-weight:bold;
@@ -233,6 +233,8 @@ background-color: white;
     color:tomato;
     overflow: hidden;
     margin-left:30px;
+    position:relative;
+    top:-40px;
 }
 
 #auto-winner-blue {
@@ -241,6 +243,8 @@ background-color: white;
     color:dodgerblue;
     overflow: hidden;
     margin-left:30px;
+    position:relative;
+    top:-40px;
 }
 
 #auto-winner-blue:hover {

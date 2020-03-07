@@ -202,8 +202,8 @@
             else if (variable == "TP" && purpleTower > 0) {
                 purpleTower -= 1;
             } 
-            redScore = (redOrange * (orangeTower+1)) + (redGreen * (greenTower+1)) + (redPurple * (purpleTower+1));
-            blueScore = (blueOrange * (orangeTower+1)) + (blueGreen * (greenTower+1)) + (bluePurple * (purpleTower+1));
+            redScore = (redOrange * (orangeTower+1)) + (redGreen * (greenTower+1)) + (redPurple * (purpleTower+1)) + autoPointsRed;
+            blueScore = (blueOrange * (orangeTower+1)) + (blueGreen * (greenTower+1)) + (bluePurple * (purpleTower+1)) + autoPointsBlue;
             
             if (userAlliance == "r") {
                 diffOrange = redOrange - blueOrange;                 
@@ -254,6 +254,8 @@
         }
 
         function update() {
+            redScore = (redOrange * (orangeTower+1)) + (redGreen * (greenTower+1)) + (redPurple * (purpleTower+1)) + autoPointsRed;
+            blueScore = (blueOrange * (orangeTower+1)) + (blueGreen * (greenTower+1)) + (bluePurple * (purpleTower+1)) + autoPointsBlue;
             document.getElementById("redOrange").innerHTML = redOrange;
             document.getElementById("redPurple").innerHTML = redPurple;
             document.getElementById("redGreen").innerHTML = redGreen;
@@ -336,6 +338,7 @@ function autoWinner(winner) {
     }
     document.getElementById("auto-winner-red").style.display = "none";
     document.getElementById("auto-winner-blue").style.display = "none";
+    update();
 }
     </script>
 <body>
@@ -362,7 +365,11 @@ function autoWinner(winner) {
                 </div>
                 </td>
                 <td align="center">
-                    <div class="score"><h1 id="red-score">0<button onclick="autoWinner('r')" id="auto-winner-red">RED +6</button></h1><h1 id="blue-score">0<button onclick="autoWinner('b')" id="auto-winner-blue">BLUE +6</button></h1>
+                    <div class="score">
+                        <span id="red-score">0</span>
+                        <button onclick="autoWinner('r')" id="auto-winner-red">AUTON +6</button><br>
+                        <span id="blue-score">0</span>
+                        <button onclick="autoWinner('b')" id="auto-winner-blue">AUTON +6</button><br>
                         <button onclick="reset()">RESET</button><br><button onclick="returnToMainMenu()">MAIN MENU</button>
                     </div>
                     </td>
