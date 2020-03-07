@@ -85,18 +85,20 @@ background-color: white;
 #main-program div {
     position:relative;
 }
+.img-container {
+    position:relative;
+    top:-20px;
+}
 
 #main-program img {
     width:175px;
     height:175px;
-    position:relative;
-    top:-20px;
 }
 #main-program p {
     font-size:65px;
     font-family: 'Fjalla One', sans-serif;
     font-weight:bold;
-    top:-20%;
+    top:-10%;
     color:white;
     left:50%;
     transform: translateX(-50%);
