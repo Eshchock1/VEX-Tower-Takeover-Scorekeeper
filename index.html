@@ -18,7 +18,7 @@
         var redScore = 0;
         var blueScore = 0;
         var mins = 1;
-        var seconds = 60;
+        var seconds = 59;
         var diffOrange = 0;
         var diffGreen = 0;
         var diffPurple = 0;
@@ -63,6 +63,7 @@
             setTimeout(function() {
                 update();
                 document.getElementById("auto-winner-red").style.display = "inline-block";
+                document.getElementById("auto-winner-tie").style.display = "inline-block";
                 document.getElementById("auto-winner-blue").style.display = "inline-block";
                 resetTimer();
             }, 1000);
@@ -91,6 +92,7 @@
             autoPointsRed = 0;
             timerRunning = false;
             document.getElementById("auto-winner-red").style.display = "inline-block";
+            document.getElementById("auto-winner-tie").style.display = "inline-block";
             document.getElementById("auto-winner-blue").style.display = "inline-block";
             resetTimer();
             update();
@@ -303,7 +305,7 @@
         function resetTimer(){
             clearInterval(timer);
             timerRunning = false;
-            seconds = 60;
+            seconds = 59;
             mins = 1;
             document.getElementById("timer").innerHTML = "2:00";
         }
@@ -333,10 +335,15 @@ function autoWinner(winner) {
     if (winner == "r") {
         autoPointsRed = 6;
     }
-    else {
+    else if (winner == "b"){
         autoPointsBlue = 6;
     }
+    else {
+        autoPointsBlue = 3;
+        autoPointsRed = 3;
+    }
     document.getElementById("auto-winner-red").style.display = "none";
+    document.getElementById("auto-winner-tie").style.display = "none";
     document.getElementById("auto-winner-blue").style.display = "none";
     update();
 }
@@ -368,6 +375,7 @@ function autoWinner(winner) {
                     <div class="score">
                         <span id="red-score">0</span>
                         <button onclick="autoWinner('r')" id="auto-winner-red">AUTON +6</button><br>
+                        <button onclick="autoWinner('t')" id="auto-winner-tie">AUTON +3</button><br>
                         <span id="blue-score">0</span>
                         <button onclick="autoWinner('b')" id="auto-winner-blue">AUTON +6</button><br>
                         <button onclick="reset()">RESET</button><br><button onclick="returnToMainMenu()">MAIN MENU</button>

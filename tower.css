@@ -249,11 +249,24 @@ background-color: white;
     top:-40px;
 }
 
+#auto-winner-tie {
+    width:100px;
+    border:2px solid gray;
+    color:gray;
+    overflow: hidden;
+    position:relative;
+    top:-20px;
+}
+
 #auto-winner-blue:hover {
     background:dodgerblue;
     color:white;
 }
 #auto-winner-red:hover {
     background:tomato;
+    color:white;
+}
+#auto-winner-tie:hover {
+    background:gray;
     color:white;
 }
