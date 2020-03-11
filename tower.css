@@ -145,6 +145,7 @@ background-color: white;
     color:white;
     font-size:1vw;
     padding:0.52vw;
+    margin:0;
 }
 
 .score span{
@@ -283,4 +284,8 @@ background-color: white;
 
 .table2 {
     margin-top:-1vw;
+}
+
+#mobile-main-program {
+    display:none;
 }

@@ -1,0 +1,258 @@
+@media only screen and (max-width:768px) {
+    
+    /* main page */
+    
+    #main-menu {
+        padding-top:50%;
+    }
+    
+    #main-menu h1 {
+        font-size:8vw;
+        padding:5vw;
+    }
+    #main-menu h2 {
+        font-size:6vw;
+        padding:2vw;
+    }
+    
+    
+    @keyframes pulsate {
+        0% {font-size:6vw;}
+        50% {font-size:6.3vw;}
+        100% {font-size:6vw;}
+      }
+    
+    
+    #main-menu button {
+        border-radius:1vw;
+        font-size:4vw;
+        padding:2vw;
+        color:1vw;
+        width:30vw;
+    }
+    .red {
+        border:0.5vw solid tomato;
+        margin-right:3vw;
+    }
+    .blue {
+        border:0.5vw solid dodgerblue;
+    }
+
+
+
+
+    /* main program */
+
+
+    #main-program {
+        display:none;
+        }
+        #mobile-main-program {
+            display:block;
+        }
+ 
+        #mobile-main-program {
+            width:100%;
+            height:100%;
+            background-color: white;
+            }
+            .main-table {
+                width:100%;
+                padding:2vw;
+            }
+            
+            .main-table td {
+                width:100%;
+            }
+            #spacing-div {
+                height:5vw;
+                display:block;
+            }
+
+            .card {
+                box-shadow: 0 2vw 2vw 0 rgba(0, 0, 0, 0.25);
+                border-radius:2vw;
+                display:inline-block;
+                
+            }
+            
+            #mobile-main-program h1 {
+                font-size:4vw;
+                font-family: 'Roboto', sans-serif;
+            }
+    
+            #mobile-main-program div {
+                position:relative;
+            }
+            .img-container {
+                position:relative;
+                top:-4vw;
+            }
+            
+            #mobile-main-program img {
+                width:26vw;
+                height:26vw;
+            }
+            #mobile-main-program p {
+                font-size:10vw;
+                font-family: 'Fjalla One', sans-serif;
+                font-weight:bold;
+                top:-3vw;
+                color:white;
+                left:50%;
+                transform: translateX(-50%);
+                position:absolute;
+                padding:0;
+            }
+            .red-strip {
+                width:100%;
+                height:7vw;
+                position:realtive;
+                background:tomato;
+                border-radius: 2vw 2vw 0 0;
+            }
+            .blue-strip {
+                width:100%;
+                height:7vw;
+                position:realtive;
+                background-color:dodgerblue;
+                border-radius: 2vw 2vw 0 0;
+            }
+            .gray-strip {
+                width:100%;
+                height:7vw;
+                position:realtive;
+                background-color:gray;
+                border-radius: 2vw 2vw 0 0;
+            }
+            .strip-text{
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                color:white;
+                font-size:4vw;
+                padding:0.52vw;
+                margin:0;
+            }
+            
+            .score span{
+                font-size:16vw !important;
+                font-family: 'Fjalla One', sans-serif;
+                font-weight:bold;
+                line-height: 1em;
+                margin:0;
+            }
+            .score h2{
+                font-size:4.1vw !important;
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                margin:0;
+                color:gray;
+            }
+            
+            .score button {
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                margin-top:1vw;
+                border-radius:1vw;
+                padding:1.5vw;
+                color:1vw;
+                width:20vw;
+                background-color:white;
+                transition:0.1s ease-in-out;
+                color:gray;
+                border:0.15vw solid gray;
+            }
+            
+            .score button:hover {
+                background-color:gray;
+                color:white;
+            }
+            
+            .place-remove .card {
+                margin:1vw;
+                border-radius:0.3vw;
+                overflow:hidden;
+            }
+            .place-remove img {
+                border-radius:1w;
+            }
+            .place-remove .gray-strip {
+                margin-bottom:1.6vw;
+            }
+            .place-remove .gray-strip .strip-text {
+                padding-left:0;
+
+            }
+            
+            .remove {
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                border-radius:1vw;
+                padding:1.5vw;
+                width:20vw;
+                background-color:white;
+                transition:0.1s ease-in-out;
+                color:gray;
+                border:0.4vw solid gray;
+                margin-top:-0.8vw;
+                margin-bottom:2vw;
+            }
+            
+            .remove:hover {
+                background-color:gray;
+                color:white;
+            }
+            
+            #auto-winner-red {
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                border-radius:1vw;
+                padding:1.5vw;
+                width:20vw;
+                border:0.5vw solid tomato;
+                color:tomato;
+                overflow: hidden;
+                position:relative;
+                background:white;
+            }
+            
+            #auto-winner-blue {
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                border-radius:1vw;
+                padding:1.5vw;
+                width:20vw;
+                border:0.5vw solid dodgerblue;
+                color:dodgerblue;
+                overflow: hidden;
+                position:relative;
+                background:white;
+            }
+            
+            #auto-winner-tie {
+                font-family: 'Roboto', sans-serif;
+                font-weight:bold;
+                border-radius:1vw;
+                padding:1.5vw;
+                width:20vw;
+                border:0.5vw solid gray;
+                color:gray;
+                overflow: hidden;
+                position:relative;
+                background:white;
+            }
+            
+            #auto-winner-blue:hover {
+                background:dodgerblue;
+                color:white;
+            }
+            #auto-winner-red:hover {
+                background:tomato;
+                color:white;
+            }
+            #auto-winner-tie:hover {
+                background:gray;
+                color:white;
+            }
+
+}
