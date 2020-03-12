@@ -68,6 +68,14 @@
                 height:5vw;
                 display:block;
             }
+            
+            .score #blue-score-mobile {
+                color:dodgerblue;
+            }
+            .score #red-score-mobile {
+                color:tomato;
+            }
+            
 
             .card {
                 box-shadow: 0 2vw 2vw 0 rgba(0, 0, 0, 0.25);
@@ -203,7 +211,7 @@
                 color:white;
             }
             
-            #auto-winner-red {
+            #auto-winner-red-mobile {
                 font-family: 'Roboto', sans-serif;
                 font-weight:bold;
                 border-radius:1vw;
@@ -216,7 +224,7 @@
                 background:white;
             }
             
-            #auto-winner-blue {
+            #auto-winner-blue-mobile {
                 font-family: 'Roboto', sans-serif;
                 font-weight:bold;
                 border-radius:1vw;
@@ -229,7 +237,7 @@
                 background:white;
             }
             
-            #auto-winner-tie {
+            #auto-winner-tie-mobile {
                 font-family: 'Roboto', sans-serif;
                 font-weight:bold;
                 border-radius:1vw;
