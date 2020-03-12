@@ -68,6 +68,9 @@
                 document.getElementById("auto-winner-red").style.display = "inline-block";
                 document.getElementById("auto-winner-tie").style.display = "inline-block";
                 document.getElementById("auto-winner-blue").style.display = "inline-block";
+                document.getElementById("auto-winner-red-mobile").style.display = "inline-block";
+                 document.getElementById("auto-winner-tie-mobile").style.display = "inline-block";
+                 document.getElementById("auto-winner-blue-mobile").style.display = "inline-block";
                 resetTimer();
             }, 1000);
         }
@@ -97,6 +100,9 @@
             document.getElementById("auto-winner-red").style.display = "inline-block";
             document.getElementById("auto-winner-tie").style.display = "inline-block";
             document.getElementById("auto-winner-blue").style.display = "inline-block";
+            document.getElementById("auto-winner-red-mobile").style.display = "inline-block";
+            document.getElementById("auto-winner-tie-mobile").style.display = "inline-block";
+            document.getElementById("auto-winner-blue-mobile").style.display = "inline-block";
             resetTimer();
             update();
         }
@@ -272,30 +278,54 @@
             document.getElementById("purpleTowers").innerHTML = purpleTower;
             document.getElementById("blue-score").innerHTML = blueScore;
             document.getElementById("red-score").innerHTML = redScore;
+
+
+            document.getElementById("redOrange-mobile").innerHTML = redOrange;
+            document.getElementById("redPurple-mobile").innerHTML = redPurple;
+            document.getElementById("redGreen-mobile").innerHTML = redGreen;
+            document.getElementById("blueOrange-mobile").innerHTML = blueOrange;
+            document.getElementById("bluePurple-mobile").innerHTML = bluePurple;
+            document.getElementById("blueGreen-mobile").innerHTML = blueGreen;
+            document.getElementById("orangeTowers-mobile").innerHTML = orangeTower;
+            document.getElementById("greenTowers-mobile").innerHTML = greenTower;
+            document.getElementById("purpleTowers-mobile").innerHTML = purpleTower;
+            document.getElementById("blue-score-mobile").innerHTML = blueScore;
+            document.getElementById("red-score-mobile").innerHTML = redScore;
+
+
             if (place == "o"){
                 document.getElementById("place").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='orangecube.jpg'>";
+                document.getElementById("place-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='orangecube.jpg'>";
+
             }
             else if (place == "g"){
                 document.getElementById("place").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='greencube.jpg'>";
+                document.getElementById("place-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='greencube.jpg'>";
             }
             else if (place == "p"){
                 document.getElementById("place").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='purplecube.jpg'>";                
+                document.getElementById("place-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='purplecube.jpg'>";                
             }
             else {
                 document.getElementById("place").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='white.jpg'>";
+                document.getElementById("place-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>PLACE</h2></div><img src='white.jpg'>";
             }
 
             if (remove == "o"){
                 document.getElementById("remove").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='orangecube.jpg'>";
+                document.getElementById("remove-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='orangecube.jpg'>";
             }
             else if (remove == "g"){
                 document.getElementById("remove").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='greencube.jpg'>";                
+                document.getElementById("remove-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='greencube.jpg'>";                
             }
             else if (remove == "p"){
                 document.getElementById("remove").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='purplecube.jpg'>";
+                document.getElementById("remove-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='purplecube.jpg'>";
             }
             else {
                 document.getElementById("remove").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='white.jpg'>";
+                document.getElementById("remove-mobile").innerHTML = "<div class='gray-strip'><h2 class='strip-text'>REMOVE</h2></div><img src='white.jpg'>";
             }
         }
         function startTimer(){
@@ -348,6 +378,9 @@ function autoWinner(winner) {
     document.getElementById("auto-winner-red").style.display = "none";
     document.getElementById("auto-winner-tie").style.display = "none";
     document.getElementById("auto-winner-blue").style.display = "none";
+    document.getElementById("auto-winner-red-mobile").style.display = "none";
+    document.getElementById("auto-winner-tie-mobile").style.display = "none";
+    document.getElementById("auto-winner-blue-mobile").style.display = "none";
     update();
 }
     </script>
@@ -440,17 +473,17 @@ function autoWinner(winner) {
                    <tr>
                     <td align="center">
                         <div class="score">
-                            <span id="red-score">0</span><br><br>
-                            <span id="blue-score">0</span><br><br>
+                            <span id="red-score-mobile">0</span><br><br>
+                            <span id="blue-score-mobile">0</span><br><br>
                             <button onclick="reset()">RESET</button><br><button onclick="returnToMainMenu()">HOME</button>
                         </div>
                         </td>
                         <td valign = "center" align="center" class="place-remove" style="padding-left:5vw;">
-                            <div id="place" class="card" style="padding:0;"><div class="gray-strip" style="padding:0;margin:0;"><h2 class="strip-text">PLACE</h2></div><img src="white.jpg"></div>
-                            <div id="remove" class="card" style="padding:0;"><div class="gray-strip" style="padding:0;margin:0;"><h2 class="strip-text">REMOVE</h2></div><img src="white.jpg"></div><br><br>
-                            <button onclick="autoWinner('r')" id="auto-winner-red">AUTON +6</button>
-                            <button onclick="autoWinner('t')" id="auto-winner-tie">AUTON +3</button>
-                            <button onclick="autoWinner('b')" id="auto-winner-blue">AUTON +6</button>
+                            <div id="place-mobile" class="card" style="padding:0;"><div class="gray-strip" style="padding:0;margin:0;"><h2 class="strip-text">PLACE</h2></div><img src="white.jpg"></div>
+                            <div id="remove-mobile" class="card" style="padding:0;"><div class="gray-strip" style="padding:0;margin:0;"><h2 class="strip-text">REMOVE</h2></div><img src="white.jpg"></div><br><br>
+                            <button onclick="autoWinner('r')" id="auto-winner-red-mobile">AUTON +6</button>
+                            <button onclick="autoWinner('t')" id="auto-winner-tie-mobile">AUTON +3</button>
+                            <button onclick="autoWinner('b')" id="auto-winner-blue-mobile">AUTON +6</button>
                         </td>
                    </tr>
                </table>
@@ -462,9 +495,9 @@ function autoWinner(winner) {
                     <div class="red-strip"><h2 class="strip-text">RED GOALZONE</h2></div>
                     <table>
                         <tr>
-                            <td align="center"><br><div class="img-container" onclick="increase('RO')"><img src="orangecube.jpg"><p id="redOrange">0</p></div><button class="remove" onclick="decrease('RO')">REMOVE</button></td>
-                            <td align="center"><br><div class="img-container" onclick="increase('RP')"><img src="purplecube.jpg"><p id="redPurple">0</p></div><button class="remove" onclick="decrease('RP')">REMOVE</button></td>
-                            <td align="center"><br><div class="img-container" onclick="increase('RG')"><img src="greencube.jpg"><p id="redGreen">0</p></div><button class="remove" onclick="decrease('RG')">REMOVE</button></td>
+                            <td align="center"><br><div class="img-container" onclick="increase('RO')"><img src="orangecube.jpg"><p id="redOrange-mobile">0</p></div><button class="remove" onclick="decrease('RO')">REMOVE</button></td>
+                            <td align="center"><br><div class="img-container" onclick="increase('RP')"><img src="purplecube.jpg"><p id="redPurple-mobile">0</p></div><button class="remove" onclick="decrease('RP')">REMOVE</button></td>
+                            <td align="center"><br><div class="img-container" onclick="increase('RG')"><img src="greencube.jpg"><p id="redGreen-mobile">0</p></div><button class="remove" onclick="decrease('RG')">REMOVE</button></td>
                         </tr>
                     </table>
                 </div>
@@ -478,9 +511,9 @@ function autoWinner(winner) {
                         <div class="blue-strip"><h2 class="strip-text">BLUE GOALZONE</h2></div>
                     <table>
                         <tr>
-                            <td align="center"><br><div class="img-container" onclick="increase('BO')"><img src="orangecube.jpg"><p id="blueOrange">0</p></div><button class="remove" onclick="decrease('BO')">REMOVE</button></td>
-                            <td align="center"><br><div class="img-container" onclick="increase('BP')"><img src="purplecube.jpg"><p id="bluePurple">0</p></div><button class="remove" onclick="decrease('BP')">REMOVE</button></td>
-                            <td align="center"><br><div class="img-container" onclick="increase('BG')"><img src="greencube.jpg"><p id="blueGreen">0</p></div><button class="remove" onclick="decrease('BG')">REMOVE</button></td>
+                            <td align="center"><br><div class="img-container" onclick="increase('BO')"><img src="orangecube.jpg"><p id="blueOrange-mobile">0</p></div><button class="remove" onclick="decrease('BO')">REMOVE</button></td>
+                            <td align="center"><br><div class="img-container" onclick="increase('BP')"><img src="purplecube.jpg"><p id="bluePurple-mobile">0</p></div><button class="remove" onclick="decrease('BP')">REMOVE</button></td>
+                            <td align="center"><br><div class="img-container" onclick="increase('BG')"><img src="greencube.jpg"><p id="blueGreen-mobile">0</p></div><button class="remove" onclick="decrease('BG')">REMOVE</button></td>
                         </tr>
                     </table>
                     </div>
@@ -494,9 +527,9 @@ function autoWinner(winner) {
                         <div class="gray-strip"><h2 class="strip-text">TOWERS</h2></div>
                         <table>
                             <tr>
-                                <td align="center"><br><div class="img-container"onclick="increase('TO')"><img src="orangecube.jpg"><p id="orangeTowers">0</p></div><button class="remove" onclick="decrease('TO')">REMOVE</button></td>
-                                <td align="center"><br><div class="img-container" onclick="increase('TP')"><img src="purplecube.jpg"><p id="purpleTowers">0</p></div><button class="remove" onclick="decrease('TP')">REMOVE</button></td>
-                                <td align="center"><br><div class="img-container" onclick="increase('TG')"><img src="greencube.jpg"><p id="greenTowers">0</p></div><button class="remove" onclick="decrease('TG')">REMOVE</button></td>
+                                <td align="center"><br><div class="img-container"onclick="increase('TO')"><img src="orangecube.jpg"><p id="orangeTowers-mobile">0</p></div><button class="remove" onclick="decrease('TO')">REMOVE</button></td>
+                                <td align="center"><br><div class="img-container" onclick="increase('TP')"><img src="purplecube.jpg"><p id="purpleTowers-mobile">0</p></div><button class="remove" onclick="decrease('TP')">REMOVE</button></td>
+                                <td align="center"><br><div class="img-container" onclick="increase('TG')"><img src="greencube.jpg"><p id="greenTowers-mobile">0</p></div><button class="remove" onclick="decrease('TG')">REMOVE</button></td>
                             </tr>
                         </table>
                     </div>
